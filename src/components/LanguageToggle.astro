@@ -1,0 +1,20 @@
+---
+interface Props {
+  currentLocale: 'ko' | 'en';
+}
+
+const { currentLocale } = Astro.props;
+const otherLocale = currentLocale === 'ko' ? 'en' : 'ko';
+const currentPath = Astro.url.pathname;
+const newPath = currentLocale === 'ko' 
+  ? `/en${currentPath === '/' ? '' : currentPath}`
+  : currentPath.replace(/^\/en/, '') || '/';
+---
+
+<a
+  href={newPath}
+  class="px-3 py-1 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+  aria-label={`Switch to ${otherLocale}`}
+>
+  {currentLocale === 'ko' ? 'EN' : 'KO'}
+</a>

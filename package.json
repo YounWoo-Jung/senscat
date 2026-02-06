@@ -1,0 +1,22 @@
+{
+  "name": "senscat",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.0",
+    "@astrojs/tailwind": "^5.1.3",
+    "astro": "^4.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.0"
+  }
+}

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config } from '../config';
+import { getTranslations } from '../i18n';
+
+const locale = 'en';
+const t = getTranslations(locale);
+---
+
+<BaseLayout title={`${t.nav.about} — ${config.site.name}`} locale={locale}>
+  <div class="container mx-auto px-4 py-12 max-w-3xl">
+    <h1 class="text-4xl font-bold mb-8">{t.nav.about}</h1>
+    
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">About Senscat</h2>
+      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg">
+          Senscat is a platform that aims to quickly experiment with and deploy small products. 
+          We believe that valuable services can be provided to users without complex corporate structures or long development processes. 
+          Each service operates independently and continuously improves by quickly incorporating user feedback.
+        </p>
+        <p>
+          Our philosophy is "start small and deploy fast." Instead of waiting a long time to create a perfect product, 
+          we focus on core features, quickly release to the market, and improve based on actual user responses. 
+          This allows us to operate multiple services simultaneously even with a small team.
+        </p>
+        <p>
+          All Senscat services are designed user-centric, prioritizing privacy and transparency. 
+          We respect user data and operate within limits that do not compromise user experience, even when using advertising revenue models.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Operating Principles</h2>
+      <ul class="space-y-4">
+        <li>
+          <strong class="text-lg">Experimentation</strong>
+          <p class="text-gray-700 dark:text-gray-300">We quickly test new ideas and are not afraid of failure.</p>
+        </li>
+        <li>
+          <strong class="text-lg">Transparency</strong>
+          <p class="text-gray-700 dark:text-gray-300">We transparently disclose how services operate and communicate honestly with users.</p>
+        </li>
+        <li>
+          <strong class="text-lg">User Respect</strong>
+          <p class="text-gray-700 dark:text-gray-300">We respect user choice and privacy, always prioritizing user experience.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Service Purposes</h2>
+      <div class="space-y-6">
+        {config.services.map((service) => (
+          <div>
+            <h3 class="text-xl font-semibold mb-2">{service.icon} {service.name}</h3>
+            <p class="text-gray-700 dark:text-gray-300">{service.descriptionEn}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

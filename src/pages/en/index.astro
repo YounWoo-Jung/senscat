@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config } from '../../config';
+import { getTranslations } from '../../i18n';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const locale = 'en';
+const t = getTranslations(locale);
+---
+
+<BaseLayout title={`${config.site.name} — ${config.site.tagline}`} locale={locale}>
+  <div class="container mx-auto px-4 py-12">
+    <!-- Hero Section -->
+    <section class="text-center mb-16">
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">{config.site.name}</h1>
+      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400">{config.site.tagline}</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">{t.sections.services}</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {config.services.map((service) => (
+          <ServiceCard service={service} locale={locale} />
+        ))}
+      </div>
+    </section>
+
+    <!-- What we build Section -->
+    <section class="mb-16 max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">{t.sections.whatWeBuild}</h2>
+      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg">
+          Senscat aims to experiment with small products quickly. We create minimal services that provide 
+          real value to users. Each service operates independently and continuously improves based on user feedback. 
+          We focus on core value rather than complex features, providing better experiences through rapid iteration and experimentation.
+        </p>
+        <p class="text-lg">
+          All our services are designed user-centric, prioritizing privacy and transparency. Even when using 
+          advertising revenue models, we operate without compromising user experience and always respect user choice.
+        </p>
+        <p class="text-lg">
+          Each Senscat product is operated by a small team or individual, enabling fast decision-making and flexible development. 
+          This allows us to quickly respond to market changes and provide users with the latest features and experiences.
+        </p>
+      </div>
+    </section>
+
+    <!-- Updates Section -->
+    <section class="mb-16 max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-center">{t.sections.updates}</h2>
+      <div class="space-y-6">
+        {config.updates.map((update) => (
+          <article class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
+            <time class="text-sm text-gray-500 dark:text-gray-400">{update.date}</time>
+            <h3 class="text-xl font-semibold mt-2 mb-2">{update.titleEn}</h3>
+            <p class="text-gray-700 dark:text-gray-300">{update.contentEn}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

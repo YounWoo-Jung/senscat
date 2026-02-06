@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { config } from '../config';
+import { getTranslations } from '../i18n';
+
+const locale = 'en';
+const t = getTranslations(locale);
+---
+
+<BaseLayout title={`${t.nav.terms} — ${config.site.name}`} locale={locale}>
+  <div class="container mx-auto px-4 py-12 max-w-3xl">
+    <h1 class="text-4xl font-bold mb-8">{t.nav.terms}</h1>
+    
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">1. Terms of Service</h2>
+      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg">
+          These terms govern the rights, obligations, and responsibilities between Senscat (hereinafter "Company") 
+          and users regarding the use of all services provided by the Company.
+        </p>
+        <p>
+          Users can use the services by agreeing to these terms, and service use may be restricted if users do not agree to these terms.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">2. Provision and Modification of Services</h2>
+      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg">
+          The Company provides the following services:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>PickTube: YouTube recommendation community service</li>
+          <li>Signal: News signal service</li>
+          <li>Portfolio: Portfolio service</li>
+          <li>All other services developed by the Company or provided through partnership agreements</li>
+        </ul>
+        <p>
+          The Company may modify the content of services and will notify users in advance of such changes.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">3. Prohibited Acts</h2>
+      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg">Users must not engage in the following acts:</p>
+        <ul class="list-disc list-inside space-y-2 ml-4">
+          <li>Acts that violate laws or these terms</li>
+          <li>Acts that interfere with the stable operation of services</li>
+          <li>Acts that interfere with other users' use of services</li>
+          <li>Acts that infringe on the intellectual property rights of the Company or third parties</li>
+          <li>Acts of spreading false information</li>
+          <li>Acts of distributing malicious programs or hacking systems</li>
+          <li>Other acts contrary to public order and morals</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">4. Limitation of Liability and Disclaimer</h2>
+      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg">
+          The Company shall be exempt from liability for service provision in cases where services cannot be provided 
+          due to natural disasters or equivalent force majeure.
+        </p>
+        <p>
+          The Company shall not be liable for service disruptions caused by the user's fault.
+        </p>
+        <p>
+          The Company shall not be liable for damages incurred by users in relation to the use of free services.
+        </p>
+        <p>
+          The Company shall not be liable for lost profits expected by users from using the services, 
+          nor for damages caused by materials obtained through the services.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">5. Changes to Terms</h2>
+      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg">
+          The Company may modify these terms when necessary, and modified terms become effective by being announced 
+          on the service screen or notified to users through other methods.
+        </p>
+        <p>
+          Users who do not agree to the modified terms may discontinue service use and terminate the service agreement.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">6. Governing Law and Jurisdiction</h2>
+      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="text-lg">
+          Matters not specified in these terms shall be governed by relevant laws and commercial practices of the Republic of Korea.
+        </p>
+        <p>
+          Disputes between the Company and users regarding service use shall be governed by the laws of the Republic of Korea, 
+          and the competent court shall be the court having jurisdiction over the location of the Company's headquarters.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <p class="text-sm text-gray-600 dark:text-gray-400">Effective Date: February 6, 2025</p>
+    </section>
+  </div>
+</BaseLayout>

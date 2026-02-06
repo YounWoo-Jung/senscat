@@ -1,0 +1,33 @@
+---
+import { getTranslations, type Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const localePrefix = locale === 'ko' ? '' : `/${locale}`;
+---
+
+<footer class="bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-16">
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-600 dark:text-gray-400">{t.footer.copyright}</p>
+      <nav class="flex flex-wrap gap-4 text-sm">
+        <a href={`${localePrefix}/about`} class="hover:opacity-80 transition-opacity">
+          {t.footer.about}
+        </a>
+        <a href={`${localePrefix}/contact`} class="hover:opacity-80 transition-opacity">
+          {t.footer.contact}
+        </a>
+        <a href={`${localePrefix}/privacy`} class="hover:opacity-80 transition-opacity">
+          {t.footer.privacy}
+        </a>
+        <a href={`${localePrefix}/terms`} class="hover:opacity-80 transition-opacity">
+          {t.footer.terms}
+        </a>
+      </nav>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,31 @@
+---
+import { getTranslations, type Locale } from '../i18n';
+import LanguageToggle from './LanguageToggle.astro';
+import DarkModeToggle from './DarkModeToggle.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const localePrefix = locale === 'ko' ? '' : `/${locale}`;
+---
+
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+  <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a href={`${localePrefix}/`} class="text-xl font-bold hover:opacity-80 transition-opacity">
+      Senscat
+    </a>
+    <div class="flex items-center gap-4">
+      <a href={`${localePrefix}/about`} class="hover:opacity-80 transition-opacity">
+        {t.nav.about}
+      </a>
+      <a href={`${localePrefix}/contact`} class="hover:opacity-80 transition-opacity">
+        {t.nav.contact}
+      </a>
+      <LanguageToggle currentLocale={locale} />
+      <DarkModeToggle />
+    </div>
+  </nav>
+</header>
