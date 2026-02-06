@@ -4,7 +4,6 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://senscat.com',
   outDir: "docs",
-  base: "/",
   integrations: [
     tailwind(),
     // sitemap({
