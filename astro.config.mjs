@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://senscat.com',
+  outDir: "docs",
   integrations: [
     tailwind(),
     // sitemap({
