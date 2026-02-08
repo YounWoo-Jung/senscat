@@ -6,10 +6,7 @@ export default defineConfig({
   site: 'https://senscat.com',
   i18n: {
     defaultLocale: 'ko',
-    locales: {
-      ko: 'ko',
-      en: 'en',
-    },
+    locales: ['ko', 'en'],
     routing: {
       prefixDefaultLocale: false,
     },
