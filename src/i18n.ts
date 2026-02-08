@@ -19,6 +19,9 @@ export const translations = {
       title: '센스냥',
       tagline: 'tiny products, fast experiments',
     },
+    og: {
+      imageAlt: '센스냥 — tiny products, fast experiments',
+    },
     sections: {
       services: '서비스',
       whatWeBuild: 'What we build',
@@ -51,6 +54,9 @@ export const translations = {
     hero: {
       title: 'Senscat',
       tagline: 'tiny products, fast experiments',
+    },
+    og: {
+      imageAlt: 'Senscat — tiny products, fast experiments',
     },
     sections: {
       services: 'Services',
