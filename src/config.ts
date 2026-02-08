@@ -3,7 +3,7 @@ export const config = {
     name: 'Senscat',
     tagline: 'tiny products, fast experiments',
     domain: 'senscat.com',
-    email: 'contact@senscat.com',
+    email: 'hanuljyw@naver.com',
   },
   services: [
     {
