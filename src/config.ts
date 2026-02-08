@@ -34,9 +34,9 @@ export const config = {
   updates: [
     {
       date: '2025-02-01',
-      title: 'Senscat 런칭',
+      title: '센스냥 런칭',
       titleEn: 'Senscat Launch',
-      content: 'Senscat 플랫폼을 공식적으로 런칭했습니다.',
+      content: '센스냥 플랫폼을 공식적으로 런칭했습니다.',
       contentEn: 'Senscat platform officially launched.',
     },
     {

@@ -8,11 +8,11 @@ const locale = 'en';
 const t = getTranslations(locale);
 ---
 
-<BaseLayout title={`${config.site.name} — ${config.site.tagline}`} locale={locale}>
+<BaseLayout title={`${t.site.name} — ${config.site.tagline}`} locale={locale}>
   <div class="container mx-auto px-4 py-12">
     <!-- Hero Section -->
     <section class="text-center mb-16">
-      <h1 class="text-5xl md:text-6xl font-bold mb-4">{config.site.name}</h1>
+      <h1 class="text-5xl md:text-6xl font-bold mb-4">{t.site.name}</h1>
       <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400">{config.site.tagline}</p>
     </section>
 

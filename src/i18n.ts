@@ -5,6 +5,9 @@ export const locales: Locale[] = ['ko', 'en'];
 
 export const translations = {
   ko: {
+    site: {
+      name: '센스냥',
+    },
     nav: {
       home: '홈',
       about: '소개',
@@ -13,7 +16,7 @@ export const translations = {
       terms: '이용약관',
     },
     hero: {
-      title: 'Senscat',
+      title: '센스냥',
       tagline: 'tiny products, fast experiments',
     },
     sections: {
@@ -31,10 +34,13 @@ export const translations = {
       contact: '연락',
       privacy: '개인정보처리방침',
       terms: '이용약관',
-      copyright: '© 2025 Senscat. All rights reserved.',
+      copyright: '© 2026 센스냥. All rights reserved.',
     },
   },
   en: {
+    site: {
+      name: 'Senscat',
+    },
     nav: {
       home: 'Home',
       about: 'About',
@@ -61,7 +67,7 @@ export const translations = {
       contact: 'Contact',
       privacy: 'Privacy',
       terms: 'Terms',
-      copyright: '© 2025 Senscat. All rights reserved.',
+      copyright: '© 2026 Senscat. All rights reserved.',
     },
   },
 } as const;
