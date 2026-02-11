@@ -9,55 +9,104 @@ const t = getTranslations(locale);
 ---
 
 <BaseLayout title={`${t.site.name} — ${config.site.tagline}`} locale={locale}>
-  <div class="container mx-auto px-4 py-12">
-    <!-- Hero Section -->
-    <section class="text-center mb-16">
-      <h1 class="text-5xl md:text-6xl font-bold mb-4">{t.hero.title}</h1>
-      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400">{t.hero.tagline}</p>
-    </section>
+  <div class="relative overflow-hidden">
+    <div class="absolute -top-24 right-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" aria-hidden="true"></div>
+    <div class="absolute -bottom-24 left-0 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl" aria-hidden="true"></div>
+    <div class="container mx-auto px-4 py-16">
+      <!-- Hero Section -->
+      <section class="mb-20">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-700 px-4 py-2 text-sm text-gray-600 dark:text-gray-400 bg-white/70 dark:bg-gray-900/60 backdrop-blur">
+            Brand hub · tiny products, fast experiments
+          </div>
+          <h1 class="mt-6 text-5xl md:text-6xl font-semibold tracking-tight">
+            {t.hero.title}
+          </h1>
+          <p class="mt-5 text-xl md:text-2xl text-gray-600 dark:text-gray-400">
+            {t.hero.tagline}
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#services" class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-colors">
+              Explore products
+            </a>
+            <a href="/en/contact" class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+              Contact
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <!-- Services Section -->
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold mb-8 text-center">{t.sections.services}</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        {config.services.map((service) => (
-          <ServiceCard service={service} locale={locale} />
-        ))}
-      </div>
-    </section>
+      <!-- Services Section -->
+      <section id="services" class="mb-20">
+        <div class="flex flex-col items-center mb-10">
+          <p class="text-sm uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">Services</p>
+          <h2 class="text-3xl md:text-4xl font-semibold mt-2">{t.sections.services}</h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {config.services.map((service) => (
+            <ServiceCard service={service} locale={locale} />
+          ))}
+        </div>
+      </section>
 
-    <!-- What we build Section -->
-    <section class="mb-16 max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center">{t.sections.whatWeBuild}</h2>
-      <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-        <p class="text-lg">
-          Senscat aims to experiment with small products quickly. We create minimal services that provide 
-          real value to users. Each service operates independently and continuously improves based on user feedback. 
-          We focus on core value rather than complex features, providing better experiences through rapid iteration and experimentation.
-        </p>
-        <p class="text-lg">
-          All our services are designed user-centric, prioritizing privacy and transparency. Even when using 
-          advertising revenue models, we operate without compromising user experience and always respect user choice.
-        </p>
-        <p class="text-lg">
-          Each Senscat product is operated by a small team or individual, enabling fast decision-making and flexible development. 
-          This allows us to quickly respond to market changes and provide users with the latest features and experiences.
-        </p>
-      </div>
-    </section>
+      <!-- What we build Section -->
+      <section class="mb-20">
+        <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+          <div>
+            <p class="text-sm uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">Philosophy</p>
+            <h2 class="text-3xl md:text-4xl font-semibold mt-2">{t.sections.whatWeBuild}</h2>
+            <div class="mt-6 space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+              <p class="text-lg">
+                Senscat aims to experiment with small products quickly. We create minimal services that provide
+                real value to users. Each service operates independently and continuously improves based on user feedback.
+                We focus on core value rather than complex features, providing better experiences through rapid iteration and experimentation.
+              </p>
+              <p class="text-lg">
+                All our services are designed user-centric, prioritizing privacy and transparency. Even when using
+                advertising revenue models, we operate without compromising user experience and always respect user choice.
+              </p>
+              <p class="text-lg">
+                Each Senscat product is operated by a small team or individual, enabling fast decision-making and flexible development.
+                This allows us to quickly respond to market changes and provide users with the latest features and experiences.
+              </p>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="rounded-3xl border border-gray-200 dark:border-gray-800 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 p-8">
+              <div class="space-y-6">
+                <div>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Focus</p>
+                  <p class="text-2xl font-semibold mt-2">Validate core value fast</p>
+                  <p class="text-gray-600 dark:text-gray-400 mt-2">We build what works through experiments and iteration.</p>
+                </div>
+                <div class="h-px bg-gray-200 dark:bg-gray-800"></div>
+                <div>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Principle</p>
+                  <p class="text-2xl font-semibold mt-2">Transparency and user respect</p>
+                  <p class="text-gray-600 dark:text-gray-400 mt-2">Even small features are designed around experience.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Updates Section -->
-    <section class="mb-16 max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center">{t.sections.updates}</h2>
-      <div class="space-y-6">
-        {config.updates.map((update) => (
-          <article class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
-            <time class="text-sm text-gray-500 dark:text-gray-400">{update.date}</time>
-            <h3 class="text-xl font-semibold mt-2 mb-2">{update.titleEn}</h3>
-            <p class="text-gray-700 dark:text-gray-300">{update.contentEn}</p>
-          </article>
-        ))}
-      </div>
-    </section>
+      <!-- Updates Section -->
+      <section class="mb-10">
+        <div class="flex flex-col items-center mb-10">
+          <p class="text-sm uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">Updates</p>
+          <h2 class="text-3xl md:text-4xl font-semibold mt-2">{t.sections.updates}</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          {config.updates.map((update) => (
+            <article class="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur p-6 hover:shadow-lg transition-shadow">
+              <time class="text-sm text-gray-500 dark:text-gray-400">{update.date}</time>
+              <h3 class="text-xl font-semibold mt-2 mb-2">{update.titleEn}</h3>
+              <p class="text-gray-700 dark:text-gray-300">{update.contentEn}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
   </div>
 </BaseLayout>
