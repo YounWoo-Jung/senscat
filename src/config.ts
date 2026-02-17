@@ -3,7 +3,7 @@ export const config = {
     name: 'Senscat',
     tagline: 'tiny products, fast experiments',
     domain: 'senscat.com',
-    email: 'hanuljyw@naver.com',
+    email: 'devlab@senscat.com',
   },
   services: [
     {
@@ -13,14 +13,6 @@ export const config = {
       descriptionEn: 'YouTube recommendation community',
       url: 'https://picktube.senscat.com',
       icon: '📺',
-    },
-    {
-      id: 'signal',
-      name: 'Signal',
-      description: '온라인 트렌드 다이제스트/요약',
-      descriptionEn: 'Online trend digest & summaries',
-      url: 'https://signal.senscat.com',
-      icon: '📡',
     },
     {
       id: 'senslog',
@@ -44,15 +36,8 @@ export const config = {
       date: '2026-02-10',
       title: '센스냥 런칭',
       titleEn: 'Senscat Launch',
-      content: '1인 개발자 프로젝트 허브 센스냥(Senscat)을 공식적으로 런칭했습니다.',
-      contentEn: 'Officially launched Senscat, an indie maker project hub.',
-    },
-    {
-      date: '2026-02-05',
-      title: 'Signal 프로토타입 완성',
-      titleEn: 'Signal Prototype Complete',
-      content: '웹 트렌드를 큐레이션하는 Signal 서비스의 프로토타입을 완성했습니다.',
-      contentEn: 'Completed the prototype of Signal, a web trend digest service.',
+      content: '센스냥 브랜딩 허브 센스냥(Senscat)을 공식적으로 런칭했습니다.',
+      contentEn: 'Officially launched Senscat, a branding hub for indie makers.',
     },
     {
       date: '2026-01-20',
