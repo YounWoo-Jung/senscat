@@ -15,6 +15,14 @@ export const config = {
       icon: '📺',
     },
     {
+      id: 'comu',
+      name: 'Comu',
+      description: '메이커들의 놀이터',
+      descriptionEn: 'A playground for makers',
+      url: 'https://comu.senscat.com',
+      icon: '🎨',
+    },
+    {
       id: 'senslog',
       name: 'SensLog',
       description: '지식 기반 블로그',
@@ -32,6 +40,13 @@ export const config = {
     },
   ],
   updates: [
+    {
+      date: '2026-02-25',
+      title: '코무 런칭',
+      titleEn: 'Comu Launch',
+      content: '메이커들의 놀이터 코무(Comu)를 공식적으로 런칭했습니다.',
+      contentEn: 'Officially launched Comu, a playground for makers.',
+    },
     {
       date: '2026-02-10',
       title: '센스냥 런칭',
