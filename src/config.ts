@@ -11,7 +11,7 @@ export const config = {
       name: 'Sensmath',
       description: 'AI기반 중학생 수학 진단·보충 학습 서비스',
       descriptionEn: 'AI-based diagnostic and supplementary learning service for middle school math',
-      url: 'https://sensmath.senscat.com',
+      url: 'https://math.senscat.com',
       icon: '🧮',
     },
     {
