@@ -7,6 +7,14 @@ export const config = {
   },
   services: [
     {
+      id: 'sensmath',
+      name: 'Sensmath',
+      description: 'AI기반 중학생 수학 진단·보충 학습 서비스',
+      descriptionEn: 'AI-based diagnostic and supplementary learning service for middle school math',
+      url: 'https://sensmath.senscat.com',
+      icon: '🧮',
+    },
+    {
       id: 'picktube',
       name: 'PickTube',
       description: '유튜브 추천 커뮤니티',
@@ -40,6 +48,13 @@ export const config = {
     },
   ],
   updates: [
+    {
+      date: '2026-03-16',
+      title: '센스매스 런칭',
+      titleEn: 'Sensmath Launch',
+      content: 'AI기반 중학생 수학 진단·보충 학습 서비스 센스매스(Sensmath)를 공식적으로 런칭했습니다.',
+      contentEn: 'Officially launched Sensmath, an AI-based diagnostic and supplementary learning service for middle school math.',
+    },
     {
       date: '2026-02-25',
       title: '코무 런칭',
