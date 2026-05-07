@@ -5,9 +5,11 @@ import { getTranslations } from '../../i18n';
 
 const locale = 'en';
 const t = getTranslations(locale);
+const pageDescription = 'Senscat operates 센스매스(Sensmath), 센스AI(SensAI), and 센스타로 as practical digital services for education, enterprise AI analytics, and consultation operations.';
+const pageKeywords = ['Senscat about', '센스AI', 'SensAI', '센스매스', 'Sensmath', 'enterprise AI analytics', 'middle school math'];
 ---
 
-<BaseLayout title={`${t.nav.about} — ${t.site.name}`} locale={locale}>
+<BaseLayout title={`${t.nav.about} — ${t.site.name}`} description={pageDescription} keywords={pageKeywords} locale={locale}>
   <div class="container mx-auto px-4 py-12 max-w-3xl">
     <h1 class="text-4xl font-bold mb-8">{t.nav.about}</h1>
     
@@ -19,8 +21,8 @@ const t = getTranslations(locale);
           enterprise AI analytics, and consultation operations.
         </p>
         <p>
-          Sensmath supports middle school math learning. Selene AI Insight helps organizations understand AI usage,
-          productivity, and subscription costs. Senstaro helps tarot consultants create, edit, and share readings.
+          센스매스(Sensmath) supports middle school math learning. 센스AI(SensAI) helps organizations understand AI usage,
+          productivity, and subscription costs. 센스타로(Senstaro) helps tarot consultants create, edit, and share readings.
         </p>
         <p>
           We keep each service practical, stable, and respectful of personal data.
@@ -50,8 +52,13 @@ const t = getTranslations(locale);
       <h2 class="text-2xl font-semibold mb-4">Service Purposes</h2>
       <div class="space-y-6">
         {config.services.map((service) => (
-          <div>
-            <h3 class="text-xl font-semibold mb-2">{service.icon} {service.name}</h3>
+          <div class="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-[#111821]">
+            <h3 class="mb-2 flex items-center gap-3 text-xl font-semibold">
+              <span class="grid h-9 w-9 place-items-center rounded-md border border-gray-200 bg-gray-50 text-xs font-semibold dark:border-gray-700 dark:bg-gray-950">
+                {service.icon}
+              </span>
+              {service.name}
+            </h3>
             <p class="text-gray-700 dark:text-gray-300">{service.descriptionEn}</p>
           </div>
         ))}

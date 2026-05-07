@@ -12,16 +12,22 @@ const t = getTranslations(locale);
 const localePrefix = locale === 'ko' ? '' : `/${locale}`;
 ---
 
-<header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-  <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
-    <a href={`${localePrefix}/`} class="text-xl font-bold hover:opacity-80 transition-opacity">
-      {t.site.name}
+<header class="sticky top-0 z-50 border-b border-gray-200/80 bg-white/90 backdrop-blur-md dark:border-gray-800 dark:bg-[#0d1117]/90">
+  <nav class="container mx-auto flex items-center justify-between px-4 py-3">
+    <a href={`${localePrefix}/`} class="flex items-center gap-3 hover:opacity-85 transition-opacity">
+      <span class="grid h-9 w-9 place-items-center rounded-lg border border-gray-900 bg-gray-950 text-sm font-semibold text-white dark:border-gray-700 dark:bg-white dark:text-gray-950">
+        SC
+      </span>
+      <span>
+        <span class="block text-base font-semibold leading-tight">{t.site.name}</span>
+        <span class="hidden text-xs text-gray-500 dark:text-gray-400 sm:block">AI Product Studio</span>
+      </span>
     </a>
-    <div class="flex items-center gap-4">
-      <a href={`${localePrefix}/about`} class="hover:opacity-80 transition-opacity">
+    <div class="flex items-center gap-2 text-sm">
+      <a href={`${localePrefix}/about`} class="hidden rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-900 sm:inline-flex">
         {t.nav.about}
       </a>
-      <a href={`${localePrefix}/contact`} class="hover:opacity-80 transition-opacity">
+      <a href={`${localePrefix}/contact`} class="hidden rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-900 sm:inline-flex">
         {t.nav.contact}
       </a>
       <LanguageToggle currentLocale={locale} />

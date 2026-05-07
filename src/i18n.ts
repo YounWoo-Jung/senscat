@@ -20,7 +20,7 @@ export const translations = {
       tagline: '디지털 서비스 기획·개발·운영',
     },
     og: {
-      imageAlt: '센스냥 — 디지털 서비스 기획·개발·운영',
+      imageAlt: '센스냥 — 센스AI, 센스매스, 센스타로 디지털 서비스 회사',
     },
     sections: {
       services: '사업 영역',
@@ -56,7 +56,7 @@ export const translations = {
       tagline: 'Digital service planning, development, and operation',
     },
     og: {
-      imageAlt: 'Senscat — digital service company',
+      imageAlt: 'Senscat — 센스AI, 센스매스, and 센스타로 digital service company',
     },
     sections: {
       services: 'Services',

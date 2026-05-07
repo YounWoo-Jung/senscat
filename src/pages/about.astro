@@ -5,9 +5,11 @@ import { getTranslations } from '../i18n';
 
 const locale = 'ko';
 const t = getTranslations(locale);
+const pageDescription = '센스냥은 센스매스(Sensmath), 센스AI(SensAI), 센스타로를 직접 기획·개발·운영하는 디지털 서비스 회사입니다.';
+const pageKeywords = ['센스냥 소개', '센스AI', 'SensAI', '센스매스', 'Sensmath', '기업 AI 분석', 'AI 수학'];
 ---
 
-<BaseLayout title={`${t.nav.about} — ${t.site.name}`} locale={locale}>
+<BaseLayout title={`${t.nav.about} — ${t.site.name}`} description={pageDescription} keywords={pageKeywords} locale={locale}>
   <div class="container mx-auto px-4 py-12 max-w-4xl">
     <h1 class="text-4xl font-bold mb-8">{t.nav.about}</h1>
     
@@ -19,7 +21,7 @@ const t = getTranslations(locale);
           서비스가 실제 업무와 생활에서 자연스럽게 쓰일 수 있도록 제품 구조와 운영 흐름을 함께 설계합니다.
         </p>
         <p class="text-lg">
-          센스매스는 중학생 수학 학습을 돕는 교육 서비스이며, Selene AI Insight는 기업의 AI 활용과 비용을 분석하는 플랫폼입니다.
+          센스매스(Sensmath)는 중학생 수학 학습을 돕는 교육 서비스이며, 센스AI(SensAI)는 기업의 AI 활용과 비용을 분석하는 플랫폼입니다.
           센스타로는 타로 상담사가 상담 결과를 생성하고 고객에게 전달하는 과정을 지원합니다.
         </p>
         <p class="text-lg">
@@ -50,8 +52,13 @@ const t = getTranslations(locale);
       <h2 class="text-2xl font-semibold mb-4">서비스 목적</h2>
       <div class="space-y-6">
         {config.services.map((service) => (
-          <div>
-            <h3 class="text-xl font-semibold mb-2">{service.icon} {service.name}</h3>
+          <div class="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-[#111821]">
+            <h3 class="mb-2 flex items-center gap-3 text-xl font-semibold">
+              <span class="grid h-9 w-9 place-items-center rounded-md border border-gray-200 bg-gray-50 text-xs font-semibold dark:border-gray-700 dark:bg-gray-950">
+                {service.icon}
+              </span>
+              {service.name}
+            </h3>
             <p class="text-gray-700 dark:text-gray-300">{service.description}</p>
           </div>
         ))}
