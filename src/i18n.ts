@@ -17,15 +17,15 @@ export const translations = {
     },
     hero: {
       title: '센스냥',
-      tagline: 'tiny products, fast experiments',
+      tagline: '디지털 서비스 기획·개발·운영',
     },
     og: {
-      imageAlt: '센스냥 — tiny products, fast experiments',
+      imageAlt: '센스냥 — 디지털 서비스 기획·개발·운영',
     },
     sections: {
-      services: '서비스',
-      whatWeBuild: 'What we build',
-      updates: '업데이트',
+      services: '사업 영역',
+      whatWeBuild: '회사 소개',
+      updates: '주요 내역',
     },
     buttons: {
       visit: '방문하기',
@@ -53,14 +53,14 @@ export const translations = {
     },
     hero: {
       title: 'Senscat',
-      tagline: 'tiny products, fast experiments',
+      tagline: 'Digital service planning, development, and operation',
     },
     og: {
-      imageAlt: 'Senscat — tiny products, fast experiments',
+      imageAlt: 'Senscat — digital service company',
     },
     sections: {
       services: 'Services',
-      whatWeBuild: 'What we build',
+      whatWeBuild: 'Company',
       updates: 'Updates',
     },
     buttons: {

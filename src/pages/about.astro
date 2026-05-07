@@ -8,43 +8,40 @@ const t = getTranslations(locale);
 ---
 
 <BaseLayout title={`${t.nav.about} — ${t.site.name}`} locale={locale}>
-  <div class="container mx-auto px-4 py-12 max-w-3xl">
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
     <h1 class="text-4xl font-bold mb-8">{t.nav.about}</h1>
     
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">센스냥 소개</h2>
       <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p class="text-lg">
-          센스냥은 작은 제품을 빠르게 실험하고 배포하는 것을 목표로 하는 플랫폼입니다. 
-          우리는 복잡한 기업 구조나 긴 개발 프로세스 없이도 사용자에게 가치 있는 서비스를 제공할 수 있다고 믿습니다. 
-          각 서비스는 독립적으로 운영되며, 사용자 피드백을 빠르게 반영하여 지속적으로 개선됩니다.
+          센스냥은 교육, 기업 AI 분석, 상담 운영 도구를 직접 기획·개발·운영하는 디지털 서비스 회사입니다.
+          서비스가 실제 업무와 생활에서 자연스럽게 쓰일 수 있도록 제품 구조와 운영 흐름을 함께 설계합니다.
         </p>
         <p class="text-lg">
-          우리의 철학은 "작게 시작하고 빠르게 배포"입니다. 완벽한 제품을 만들기 위해 오래 기다리는 대신, 
-          핵심 기능에 집중하여 빠르게 시장에 내놓고, 실제 사용자 반응을 통해 개선해 나갑니다. 
-          이는 우리가 작은 팀으로도 여러 서비스를 동시에 운영할 수 있게 해줍니다.
+          센스매스는 중학생 수학 학습을 돕는 교육 서비스이며, Selene AI Insight는 기업의 AI 활용과 비용을 분석하는 플랫폼입니다.
+          센스타로는 타로 상담사가 상담 결과를 생성하고 고객에게 전달하는 과정을 지원합니다.
         </p>
         <p class="text-lg">
-          센스냥의 모든 서비스는 사용자 중심으로 설계되었으며, 개인정보 보호와 투명성을 최우선으로 합니다. 
-          우리는 사용자의 데이터를 존중하며, 광고 수익 모델을 사용하더라도 사용자 경험을 해치지 않는 선에서 운영합니다.
+          센스냥은 서비스별 핵심 사용 경험을 단순하게 유지하면서도, 개인정보 보호와 안정적인 운영을 중요하게 다룹니다.
         </p>
       </div>
     </section>
 
     <section class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">운영 원칙</h2>
-      <ul class="space-y-4">
+      <ul class="grid gap-4 md:grid-cols-3">
         <li>
-          <strong class="text-lg">실험</strong>
-          <p class="text-gray-700 dark:text-gray-300">새로운 아이디어를 빠르게 테스트하고, 실패를 두려워하지 않습니다.</p>
+          <strong class="text-lg">실용성</strong>
+          <p class="text-gray-700 dark:text-gray-300">실제 사용자와 운영자가 바로 쓸 수 있는 기능에 집중합니다.</p>
         </li>
         <li>
-          <strong class="text-lg">투명</strong>
-          <p class="text-gray-700 dark:text-gray-300">서비스 운영 방식을 투명하게 공개하며, 사용자에게 정직하게 소통합니다.</p>
+          <strong class="text-lg">안정성</strong>
+          <p class="text-gray-700 dark:text-gray-300">서비스 데이터와 고객 정보가 안전하게 다뤄지도록 설계합니다.</p>
         </li>
         <li>
-          <strong class="text-lg">사용자 존중</strong>
-          <p class="text-gray-700 dark:text-gray-300">사용자의 선택권과 개인정보를 존중하며, 항상 사용자 경험을 최우선으로 합니다.</p>
+          <strong class="text-lg">지속 개선</strong>
+          <p class="text-gray-700 dark:text-gray-300">운영 중 확인되는 피드백과 데이터를 바탕으로 개선합니다.</p>
         </li>
       </ul>
     </section>

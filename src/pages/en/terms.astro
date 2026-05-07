@@ -31,8 +31,9 @@ const t = getTranslations(locale);
           The Company provides the following services:
         </p>
         <ul class="list-disc list-inside space-y-2 ml-4">
-          <li>PickTube: YouTube recommendation community service</li>
-          <li>Portfolio: Portfolio service</li>
+          {config.services.map((service) => (
+            <li>{service.name}: {service.descriptionEn}</li>
+          ))}
           <li>All other services developed by the Company or provided through partnership agreements</li>
         </ul>
         <p>

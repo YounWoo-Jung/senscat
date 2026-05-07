@@ -30,8 +30,9 @@ const t = getTranslations(locale);
           회사는 다음과 같은 서비스를 제공합니다:
         </p>
         <ul class="list-disc list-inside space-y-2 ml-4">
-          <li>PickTube: 유튜브 추천 커뮤니티 서비스</li>
-          <li>Portfolio: 포트폴리오 서비스</li>
+          {config.services.map((service) => (
+            <li>{service.name}: {service.description}</li>
+          ))}
           <li>기타 회사가 추가로 개발하거나 제휴계약 등을 통해 제공하는 일체의 서비스</li>
         </ul>
         <p>

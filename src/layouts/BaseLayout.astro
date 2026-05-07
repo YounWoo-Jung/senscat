@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { getTranslations, type Locale } from '../i18n';
+import { config } from '../config';
 
 interface Props {
   title: string;
@@ -12,7 +13,7 @@ interface Props {
 const { title, description, locale = 'ko' } = Astro.props;
 const t = getTranslations(locale);
 const siteName = t.site.name;
-const defaultDescription = `${siteName} — tiny products, fast experiments`;
+const defaultDescription = `${siteName} — ${t.hero.tagline}`;
 const metaDescription = description ?? defaultDescription;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL('/og.svg', Astro.site);
@@ -33,6 +34,8 @@ const structuredData = {
       name: siteName,
       url: Astro.site?.href,
       logo: ogImageURL.href,
+      email: config.company.email,
+      address: config.company.address,
     },
     {
       '@type': 'WebSite',
