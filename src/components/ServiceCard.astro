@@ -16,6 +16,14 @@ const accentClass = service.id === 'sensai'
   : service.id === 'sensmath'
     ? 'from-indigo-500 to-sky-500'
     : 'from-rose-500 to-amber-500';
+const isSensAI = service.id === 'sensai';
+const modalTitle = locale === 'ko' ? '안내' : 'Notice';
+const modalMessage = locale === 'ko'
+  ? '선결제 구축형 제품입니다.\n가격 견적 요청 문의 바랍니다.'
+  : 'This is a pre-paid build-to-order product.\nPlease contact us for a price quote.';
+const contactText = locale === 'ko' ? '문의하기' : 'Contact';
+const closeText = locale === 'ko' ? '닫기' : 'Close';
+const contactHref = locale === 'ko' ? '/contact' : '/en/contact';
 ---
 
 <article class="group relative overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl dark:border-gray-800 dark:bg-[#111821] dark:hover:border-gray-700">
@@ -37,13 +45,98 @@ const accentClass = service.id === 'sensai'
       </li>
     ))}
   </ul>
-  <a 
-    href={service.url} 
-    target={isExternal ? '_blank' : undefined}
-    rel={isExternal ? 'noopener noreferrer' : undefined}
-    class="inline-flex items-center gap-2 rounded-md border border-gray-300 px-3.5 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-gray-900 hover:bg-gray-950 hover:text-white dark:border-gray-700 dark:text-gray-100 dark:hover:border-gray-200 dark:hover:bg-white dark:hover:text-gray-950"
-  >
-    {buttonText}
-    <span aria-hidden="true">→</span>
-  </a>
+  {isSensAI ? (
+    <button
+      type="button"
+      data-sensai-visit-btn
+      class="inline-flex items-center gap-2 rounded-md border border-gray-300 px-3.5 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-gray-900 hover:bg-gray-950 hover:text-white dark:border-gray-700 dark:text-gray-100 dark:hover:border-gray-200 dark:hover:bg-white dark:hover:text-gray-950"
+    >
+      {buttonText}
+      <span aria-hidden="true">→</span>
+    </button>
+  ) : (
+    <a
+      href={service.url}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      class="inline-flex items-center gap-2 rounded-md border border-gray-300 px-3.5 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-gray-900 hover:bg-gray-950 hover:text-white dark:border-gray-700 dark:text-gray-100 dark:hover:border-gray-200 dark:hover:bg-white dark:hover:text-gray-950"
+    >
+      {buttonText}
+      <span aria-hidden="true">→</span>
+    </a>
+  )}
 </article>
+
+{isSensAI && (
+  <div
+    data-sensai-modal
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="sensai-modal-title"
+  >
+    <div data-sensai-modal-backdrop class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-md overflow-hidden rounded-xl border border-gray-200 bg-white shadow-2xl dark:border-gray-800 dark:bg-[#111821]">
+      <div class={`h-1 bg-gradient-to-r ${accentClass}`}></div>
+      <div class="p-6">
+        <div class="mb-4 flex items-start gap-3">
+          <div class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-cyan-500 to-emerald-500 text-sm font-semibold text-white">
+            AI
+          </div>
+          <div class="flex-1">
+            <h4 id="sensai-modal-title" class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              {modalTitle}
+            </h4>
+            <p class="mt-2 whitespace-pre-line text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+              {modalMessage}
+            </p>
+          </div>
+        </div>
+        <div class="mt-6 flex justify-end gap-2">
+          <button
+            type="button"
+            data-sensai-modal-close
+            class="rounded-md border border-gray-300 px-3.5 py-2 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+          >
+            {closeText}
+          </button>
+          <a
+            href={contactHref}
+            class="inline-flex items-center gap-1.5 rounded-md bg-gradient-to-r from-cyan-500 to-emerald-500 px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-opacity hover:opacity-90"
+          >
+            {contactText}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+{isSensAI && (
+  <script>
+    (() => {
+      const btn = document.querySelector('[data-sensai-visit-btn]');
+      const modal = document.querySelector('[data-sensai-modal]');
+      if (!btn || !modal) return;
+      const backdrop = modal.querySelector('[data-sensai-modal-backdrop]');
+      const closeBtn = modal.querySelector('[data-sensai-modal-close]');
+      const open = () => {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      };
+      const close = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      };
+      btn.addEventListener('click', open);
+      backdrop?.addEventListener('click', close);
+      closeBtn?.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+      });
+    })();
+  </script>
+)}
