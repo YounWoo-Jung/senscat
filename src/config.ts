@@ -19,6 +19,8 @@ export const config = {
       '기업 AI 분석',
       'AI 사용량 분석',
       'AI 구독 비용 최적화',
+      '개발 외주',
+      '외주 개발',
       '센스타로',
     ],
     keywordsEn: [
