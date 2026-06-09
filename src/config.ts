@@ -42,7 +42,7 @@ export const config = {
     ceo: '최정현',
     address: '경기도 의정부시 신흥로 234, 11층 스마트오피스',
     businessNumber: '589-20-02417',
-    ecommerceRegistration: '2025-경기양주-0220',
+    ecommerceRegistration: '2026-의정부흥선-0318',
     privacyOfficer: '최정현',
     email: 'sejabi@senscat.com',
   },
