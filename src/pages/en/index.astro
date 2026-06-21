@@ -6,14 +6,14 @@ import ServiceCard from '../../components/ServiceCard.astro';
 
 const locale = 'en';
 const t = getTranslations(locale);
-const pageDescription = 'Senscat plans, develops, and operates 센스AI(SensAI) enterprise AI analytics, 센스매스(Sensmath) AI math learning, and 센스타로 consultation tools.';
-const pageKeywords = ['센스AI', 'SensAI', '센스매스', 'Sensmath', 'enterprise AI analytics', 'AI math learning', 'Senscat'];
+const pageDescription = 'Senscat plans, develops, and operates 센스AI(SensAI) enterprise AI analytics and 센스매스(Sensmath) AI math learning. We also accept custom software development outsourcing inquiries.';
+const pageKeywords = ['센스AI', 'SensAI', '센스매스', 'Sensmath', 'enterprise AI analytics', 'AI math learning', 'Senscat', 'software development outsourcing', 'web development', 'custom development'];
 const heroStats = [
-  { value: '3', label: 'products in operation' },
+  { value: '2', label: 'products in operation' },
   { value: 'AI', label: 'analytics and automation' },
   { value: '2025', label: 'registered business' },
 ];
-const ideaSignals = ['learning diagnosis', 'AI usage', 'subscription cost', 'consultation flow'];
+const ideaSignals = ['learning diagnosis', 'AI usage', 'subscription cost', 'custom development'];
 const buildLoop = [
   { step: '01', title: 'Capture signals', description: 'Turn user flows and operating data into product hypotheses.' },
   { step: '02', title: 'Ship prototypes', description: 'Design web services, data storage, and admin tools together.' },
@@ -21,7 +21,7 @@ const buildLoop = [
 ];
 ---
 
-<BaseLayout title={`${t.site.name} — 센스AI and 센스매스 digital services`} description={pageDescription} keywords={pageKeywords} locale={locale}>
+<BaseLayout title={`${t.site.name} — 센스AI, 센스매스, custom development`} description={pageDescription} keywords={pageKeywords} locale={locale}>
   <div class="overflow-hidden">
     <section class="relative border-b border-gray-200 dark:border-gray-800">
       <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(17,24,39,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(17,24,39,0.06)_1px,transparent_1px)] bg-[size:42px_42px] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)]" aria-hidden="true"></div>
@@ -35,7 +35,8 @@ const buildLoop = [
               An AI startup studio turning ideas into operating services
             </h1>
             <p class="mt-6 max-w-2xl text-lg leading-relaxed text-gray-600 dark:text-gray-300 md:text-xl">
-              Senscat builds and operates 센스AI, 센스매스, and 센스타로 while validating service ideas that need data analytics and automation.
+              Senscat builds and operates 센스AI and 센스매스, and also accepts custom software development outsourcing projects.
+              We validate service ideas that need data analytics and automation.
             </p>
             <div class="mt-8 flex flex-col gap-3 sm:flex-row">
               <a href="#services" class="inline-flex items-center justify-center rounded-lg bg-gray-950 px-6 py-3 font-semibold text-white shadow-lg shadow-gray-900/10 transition-colors hover:bg-gray-800 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200">
@@ -91,7 +92,7 @@ const buildLoop = [
                     <span class="rounded-md border border-white/10 bg-white/[0.06] px-2 py-1 text-center text-xs font-semibold">{service.icon}</span>
                     <span class="text-sm">{service.name}</span>
                     <span class="h-2 w-24 rounded-sm bg-white/10">
-                      <span class={`block h-2 rounded-sm ${service.id === 'sensai' ? 'w-3/5 bg-cyan-300' : service.id === 'sensmath' ? 'w-5/6 bg-indigo-300' : 'w-4/5 bg-rose-300'}`}></span>
+                      <span class={`block h-2 rounded-sm ${service.id === 'sensai' ? 'w-3/5 bg-cyan-300' : 'w-5/6 bg-indigo-300'}`}></span>
                     </span>
                   </div>
                 ))}
@@ -109,8 +110,9 @@ const buildLoop = [
             <h2 class="mt-3 text-3xl font-semibold md:text-4xl">Ideas become real products</h2>
           </div>
           <p class="max-w-2xl text-gray-600 dark:text-gray-300">
-            Starting with 센스매스(Sensmath), Senscat is expanding into 센스AI(SensAI) enterprise AI analytics
-            and 센스타로 consultation operations. Each service is planned, built, deployed, and improved in-house.
+            Starting with 센스매스(Sensmath), Senscat is expanding into 센스AI(SensAI) enterprise AI analytics.
+            We also provide custom software development outsourcing services.
+            Each service is planned, built, deployed, and improved in-house.
           </p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -164,8 +166,8 @@ const buildLoop = [
               <p class="mt-2 text-2xl font-semibold">learning diagnostics</p>
             </div>
             <div class="rounded-lg border border-white/10 bg-white/[0.04] p-5">
-              <p class="text-sm text-gray-300">센스타로</p>
-              <p class="mt-2 text-2xl font-semibold">consultation flow</p>
+              <p class="text-sm text-gray-300">Outsourcing</p>
+              <p class="mt-2 text-2xl font-semibold">custom development</p>
             </div>
           </div>
         </div>
