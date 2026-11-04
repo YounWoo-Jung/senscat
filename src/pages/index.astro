@@ -261,21 +261,21 @@ const operatingSignals = [
 
     <section>
       <div class="container mx-auto px-4">
-        <div class="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-orange-500 via-rose-500 to-fuchsia-600 px-6 py-16 text-center text-white shadow-2xl shadow-rose-500/20 sm:px-12">
-          <div class="pointer-events-none absolute -left-16 -top-16 -z-10 h-56 w-56 rounded-full bg-white/15 blur-2xl" aria-hidden="true"></div>
-          <div class="pointer-events-none absolute -bottom-20 -right-10 -z-10 h-64 w-64 rounded-full bg-amber-300/30 blur-3xl" aria-hidden="true"></div>
-          <span class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-white shadow-lg shadow-rose-900/20">
+        <div class="relative isolate overflow-hidden rounded-[2rem] border border-stone-200/80 bg-white px-6 py-16 text-center shadow-sm dark:border-white/10 dark:bg-white/[0.04] sm:px-12">
+          <div class="pointer-events-none absolute -left-16 -top-16 -z-10 h-56 w-56 rounded-full bg-orange-100/70 blur-3xl dark:bg-orange-500/10" aria-hidden="true"></div>
+          <div class="pointer-events-none absolute -bottom-20 -right-10 -z-10 h-64 w-64 rounded-full bg-rose-100/70 blur-3xl dark:bg-violet-500/10" aria-hidden="true"></div>
+          <span class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-orange-50 ring-1 ring-orange-200/60 dark:bg-orange-400/10 dark:ring-orange-300/20">
             <Logo id="cta" class="h-11 w-11" />
           </span>
           <h2 class="mt-6 text-3xl font-extrabold tracking-tight md:text-4xl">함께 만들 아이디어가 있나요?</h2>
-          <p class="mx-auto mt-4 max-w-xl text-lg text-white/90">
+          <p class="mx-auto mt-4 max-w-xl text-lg text-stone-600 dark:text-stone-300">
             외주개발·맞춤형 소프트웨어 개발, 서비스 제휴 문의를 기다립니다.
           </p>
           <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="/contact" class="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 font-semibold text-rose-600 shadow-lg shadow-rose-900/20 transition hover:-translate-y-0.5 hover:bg-orange-50">
+            <a href="/contact" class="inline-flex items-center justify-center rounded-full bg-stone-900 px-7 py-3.5 font-semibold text-white shadow-lg shadow-stone-900/20 transition hover:-translate-y-0.5 hover:bg-stone-800 dark:bg-white dark:text-stone-900 dark:hover:bg-orange-100">
               문의하기
             </a>
-            <a href={`mailto:${config.company.email}`} class="inline-flex items-center justify-center rounded-full bg-white/15 px-7 py-3.5 font-semibold text-white ring-1 ring-inset ring-white/40 transition hover:bg-white/25">
+            <a href={`mailto:${config.company.email}`} class="inline-flex items-center justify-center rounded-full bg-white/80 px-7 py-3.5 font-semibold text-stone-900 ring-1 ring-inset ring-stone-900/10 transition hover:text-orange-600 hover:ring-orange-300 dark:bg-white/5 dark:text-stone-100 dark:ring-white/15 dark:hover:text-orange-200">
               {config.company.email}
             </a>
           </div>
