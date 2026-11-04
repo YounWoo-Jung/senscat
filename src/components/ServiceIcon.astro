@@ -1,0 +1,40 @@
+---
+interface Props {
+  /** config.services의 id 또는 'outsourcing' */
+  id: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { id, size = 'md' } = Astro.props;
+
+const tiles: Record<string, { gradient: string; paths: string[] }> = {
+  sensmath: {
+    gradient: 'from-sky-400 to-indigo-500 shadow-indigo-500/30',
+    paths: ['M7 4.5v5M4.5 7h5', 'M14.5 7h5', 'm5.2 15.2 3.6 3.6m0-3.6-3.6 3.6', 'M14.5 15.5h5m-5 3h5'],
+  },
+  sensepromo: {
+    gradient: 'from-violet-500 to-fuchsia-500 shadow-fuchsia-500/30',
+    paths: ['M3.5 10.2v3.6c0 .6.4 1 1 1h2.3l7.2 4.2V5L6.8 9.2H4.5c-.6 0-1 .4-1 1Z', 'M17.5 9.5a3.5 3.5 0 0 1 0 5', 'M20 7a7 7 0 0 1 0 10'],
+  },
+  outsourcing: {
+    gradient: 'from-orange-400 to-rose-500 shadow-orange-500/30',
+    paths: ['M8.5 7.5 4 12l4.5 4.5', 'M15.5 7.5 20 12l-4.5 4.5', 'm13.5 5-3 14'],
+  },
+};
+const fallback = {
+  gradient: 'from-stone-500 to-stone-700 shadow-stone-500/30',
+  paths: ['m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8Z'],
+};
+const tile = tiles[id] ?? fallback;
+const sizes = {
+  sm: 'h-9 w-9 rounded-xl [&>svg]:h-5 [&>svg]:w-5',
+  md: 'h-11 w-11 rounded-2xl [&>svg]:h-6 [&>svg]:w-6',
+  lg: 'h-14 w-14 rounded-2xl [&>svg]:h-7 [&>svg]:w-7',
+};
+---
+
+<span class={`grid shrink-0 place-items-center bg-gradient-to-br text-white shadow-lg ${tile.gradient} ${sizes[size]}`} aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    {tile.paths.map((d) => <path d={d} />)}
+  </svg>
+</span>

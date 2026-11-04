@@ -1,4 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="40" fill="#3b82f6"/>
-  <text x="50" y="65" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">S</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="fur" x1="24" y1="4" x2="24" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffb25b"/>
+      <stop offset="1" stop-color="#ff6e3a"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#fur)" d="M24 11.5c2.5 0 4.8.4 7 1.1l6.6-6.4c1.6-1.4 4-.5 4.1 1.6l.6 10.7c1.9 3.1 2.7 6.5 2.7 10 0 10-9.4 16-21 16s-21-6-21-16c0-3.5.8-6.9 2.7-10l.6-10.7c.1-2.1 2.5-3 4.1-1.6l6.6 6.4c2.2-.7 4.5-1.1 7-1.1Z"/>
+  <path fill="#ffe3cf" d="M33.6 13.4 39.3 8.3c.6-.5 1-.2 1 .5l.6 7.6ZM14.4 13.4 8.7 8.3c-.6-.5-1-.2-1 .5l-.6 7.6Z"/>
+  <g fill="#2b2135">
+    <ellipse cx="16.8" cy="27.5" rx="2.7" ry="3.5"/>
+    <ellipse cx="31.2" cy="27.5" rx="2.7" ry="3.5"/>
+    <path d="M22.2 31.4h3.6c.6 0 .9.6.5 1.1l-1.7 1.7c-.3.3-.9.3-1.2 0l-1.7-1.7c-.4-.5-.1-1.1.5-1.1Z"/>
+  </g>
+  <g fill="#fff">
+    <circle cx="17.8" cy="26.2" r="1"/>
+    <circle cx="32.2" cy="26.2" r="1"/>
+  </g>
+  <g fill="none" stroke="#2b2135" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="1.4" d="M24 34.4v1.2m-3.2-.2c.8 1.6 2.4 1.6 3.2.2.8 1.4 2.4 1.4 3.2-.2"/>
+    <path stroke-width="1.2" stroke-opacity=".45" d="m5.6 30.4 6 1m-5.6 3 5.8-1m30.6-3-6 1m5.6 3-5.8-1"/>
+  </g>
 </svg>

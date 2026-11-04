@@ -2,6 +2,7 @@
 import { getTranslations, type Locale } from '../i18n';
 import LanguageToggle from './LanguageToggle.astro';
 import DarkModeToggle from './DarkModeToggle.astro';
+import Logo from './Logo.astro';
 
 interface Props {
   locale: Locale;
@@ -10,24 +11,23 @@ interface Props {
 const { locale } = Astro.props;
 const t = getTranslations(locale);
 const localePrefix = locale === 'ko' ? '' : `/${locale}`;
+const [brandHead, brandTail] = locale === 'ko' ? ['센스', '냥'] : ['Sens', 'cat'];
 ---
 
-<header class="sticky top-0 z-50 border-b border-gray-200/80 bg-white/90 backdrop-blur-md dark:border-gray-800 dark:bg-[#0d1117]/90">
-  <nav class="container mx-auto flex items-center justify-between px-4 py-3">
-    <a href={`${localePrefix}/`} class="flex items-center gap-3 hover:opacity-85 transition-opacity">
-      <span class="grid h-9 w-9 place-items-center rounded-lg border border-gray-900 bg-gray-950 text-sm font-semibold text-white dark:border-gray-700 dark:bg-white dark:text-gray-950">
-        SC
-      </span>
-      <span>
-        <span class="block text-base font-semibold leading-tight">{t.site.name}</span>
-        <span class="hidden text-xs text-gray-500 dark:text-gray-400 sm:block">AI Product Studio</span>
+<header class="sticky top-0 z-50 border-b border-stone-900/5 bg-[#fffaf5]/80 backdrop-blur-xl dark:border-white/10 dark:bg-[#100e15]/80">
+  <nav class="container mx-auto flex h-16 items-center justify-between px-4">
+    <a href={`${localePrefix}/`} class="group flex items-center gap-2.5">
+      <Logo id="header" class="h-9 w-9 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105" />
+      <span class="leading-tight">
+        <span class="block text-lg font-extrabold tracking-tight">{brandHead}<span class="text-orange-500">{brandTail}</span></span>
+        <span class="hidden text-[11px] font-medium tracking-wide text-stone-500 dark:text-stone-400 sm:block">AI Product Studio</span>
       </span>
     </a>
-    <div class="flex items-center gap-2 text-sm">
-      <a href={`${localePrefix}/about`} class="hidden rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-900 sm:inline-flex">
+    <div class="flex items-center gap-1 text-sm">
+      <a href={`${localePrefix}/about`} class="hidden rounded-full px-4 py-2 font-semibold text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-white sm:inline-flex">
         {t.nav.about}
       </a>
-      <a href={`${localePrefix}/contact`} class="hidden rounded-md px-3 py-2 font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-900 sm:inline-flex">
+      <a href={`${localePrefix}/contact`} class="mr-1 inline-flex rounded-full bg-stone-900 px-4 py-2 font-semibold text-white transition-colors hover:bg-orange-500 dark:bg-white dark:text-stone-900 dark:hover:bg-orange-300">
         {t.nav.contact}
       </a>
       <LanguageToggle currentLocale={locale} />
